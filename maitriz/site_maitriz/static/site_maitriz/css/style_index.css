@@ -1,0 +1,127 @@
+/*Alunas: Beatriz de Araújo Bezerra e Maísa Alves da Silva | ATV06 | Turma: 523*/
+
+body {
+    max-width: 50%;               /*Limita a largura máxima do layout*/
+    max-height: 90vh;             /*Limita a altura máxima do layout*/
+    margin: 30px auto;            /*Centraliza o layout e define a distância entre as márgens*/
+    border: 1px solid black;    /*Coloca uma borda na cor preta de 1px ao redor do layout*/
+    display: flex;                /*Transforma o layout em uma espécie de container, com uma maior flexibilidade para personalizá-lo*/
+    flex-direction: column;       /*Muda a direção do fluxo flexbox*/
+}
+
+header {                                      /*Configura o cabeçalho*/
+    background-color: rgb(214, 27, 133);    /*Define a cor de fundo*/
+    font-size: 23px;                          /*Define o tamanho da fonte*/
+    font-family: cambria;                     /*Define o estilo da fonte*/
+    color: white;                           /*Define a cor da fonte*/
+    text-align: center;                       /*Define o alinhamento da fonte*/
+    border-bottom: 1px solid black;         /*Coloca uma borda na cor preta de 1px na parte inferior do cabeçalho*/
+    padding: 30px;                            /*Adiciona espaçamento ao redor do conteúdo no interior do cabeçalho (para o texto ficar no centro da célula)*/
+}
+
+section {                               /*Configura o meio da tabela (menu e conteúdo principal) (id)*/
+    display: flex;                      /*Cria um sistema de layout em grade que alinha os elementos lado a lado*/  
+    border-bottom: 1px solid black;   /*Coloca uma borda na cor preta de 1px na parte inferior do da seção (que agrupa o menu (nav) e o conteúdo principal (main)*/
+    overflow: auto;                     /*Cria uma barra de rolagem automática caso o conteúdo dentro do section (nav e/ou main) ultrapasse (transborde) o tamanho definido*/
+}
+
+nav {                                         /*Configura o menu (nav)*/
+    background-color: rgb(213, 210, 210);   /*Define a cor de fundo do menu*/
+    max-width: 300px;                         /*Limita a largura máxima do menu*/
+    padding: 10px;                            /*Adiciona espaçamento ao redor do conteúdo no interior do menu (nav)*/
+    flex: 1;                                  /*Faz o menu (nav) crescer e ocupar o espaço disponível (já definido) proporcionalmente no layout flexível*/
+}
+
+main {                               /*Configura o conteúdo principal (main)*/
+    text-align: justify;             /*Define alinhamento do texto*/
+    overflow-y: auto;                /*Cria uma barra de rolagem vertical pra caso o conteúdo exceda a altura do layout*/
+    width: 100%;                     /*Define a largura do conteúdo principal para ocupar 100% do espaço do main*/
+    flex: 3;                         /*Faz o conteúdo principal ocupar 3 vezes mais espaço proporcional que o menu (nav)*/
+    padding: 10px;                   /*Adiciona espaçamento ao redor do conteúdo principal no main*/
+    box-sizing: border-box;          /*Garante que o padding e a borda sejam incluídos na largura total, evitando que o layout quebre*/
+    border-left: 1px solid black;  /*Coloca uma borda na cor preta de 1px na parte esquerda do conteúdo principal (main)*/
+}
+
+footer {                                       /*Configura o rodapé (footer)*/
+    height: 25.4px;                            /*Define a altura do rodapé*/
+    background-color: rgb(206, 163, 180);    /*Define a cor de fundo do rodapé*/
+    padding: 15px;                             /*Adiciona espaçamento interno ao redor do conteúdo no interior do rodapé (para o texto ficar no centro da célula)*/
+}
+
+@media (max-width: 768px) {            /*Aplica as regras abaixo apenas em telas menores que 768px*/
+  section {                            /*Configura o meio (section) em telas menores*/
+    flex-direction: column;            /*Move o menu (nav) lateral para o topo, acima do conteúdo principal (main)*/
+  }
+
+  nav {                                /*Configura o menu (nav) em telas menores*/
+    max-width: 100%;                   /*Permite que o menu ocupe toda a largura da tela menor, ignorando o limite anterior definido*/
+  }
+
+  main {                               /*Cnofigura o conteúdo principal (main) em telas menores*/
+    border-left: none;                 /*Remove a borda esquerda (que separava o menu (nav) lateral do conteúdo principal (main)), impedindo que fique uma borda dupla*/ 
+    border-top: 1px solid black;     /*Coloca uma borda na cor preta de 1px no topo do conteúdo principal (main)*/
+  }
+}
+
+a {                     /*Configura os links da página*/
+    font-size: 18px;    /*Define o tamanho da fonte*/
+}
+
+h1 {                       /*Configura título do tipo h1*/
+    font-size: 10vw;       /*Define o tamanho da fonte*/
+    font-family: arial;    /*Define o estilo da fonte*/
+    text-align: justify;   /*Define o alinhamento do texto*/
+}
+
+h2 {                                                /*Configura títulos do tipo h2*/
+    font-family: 'Times New Roman', Times, serif;   /*Definir estilo da fonte*/
+    font-size: 10vw;                                /*Definir tamanho da fonte*/
+}
+
+h3 {                       /*Configura título do tipo h3*/
+    font-size: 10vw;      /*Define tamanho da fonte*/
+    font-family: arial;    /*Define estilo da fonte*/
+}
+
+#nomes-menu {
+    font-size: 18px;       /*Define o tamanho da fonte*/
+    font-family: arial;    /*Define o estilo da fonte*/
+    text-align: justify;   /*Define o alinhamento do texto*/
+}
+
+.paragrafo {               /*Configura parágrafos (classe)*/
+    font-family: Arial;    /*Define estilo da fonte*/
+    font-size: 15px;       /*Define tamanho da fonte*/
+}
+
+.rod {                      /*Configura a classe rod (rodapé) que herda os elementos da classe paragrafo*/
+    text-align: center;     /*Define o alinhamento do texto*/
+    font-size: 10px;        /*Define o tamanho da fonte*/
+}
+
+ul {                        /*Configura listas*/
+    font-family: Arial;     /*Define estilo da fonte*/
+    font-size: 15px;        /*Define tamanho da fonte*/
+}
+
+a:link, a:active, a:visited {   /*Configura o link ainda não visitado (a:link), ao ser clicado (a:active) e quando já foi visitado (a:visited*/
+    color: black;             /*Cor do link quando não foi visitado e ao ser clicado*/
+    text-decoration: none;      /*Para que o link não esteja sublinhado*/
+}
+
+a:hover {                         /*Configura o link ao passar o mouse sobre ele*/
+    color: rgb(255, 0, 136);    /*Cor do link ao ser clicado*/
+    text-decoration: none;        /*Para que o link não esteja sublinhado*/
+}
+
+#imagem {           /*Configura uma imagem (id)*/
+    float: left;    /*Coloca a imagem ao lado escolhido do texto*/
+    width: 100%;    /*Define a largura da imagem*/
+    height: 20px;   /*Define a altura da imagem*/
+}
+
+.imagens {          /*Configura várias imagens (classe)*/
+    float: left;    /*Coloca a imagem ao lado escolhido do texto*/
+    width: 100%;    /*Define a largura das imagem*/
+    height: 15px;   /*Define a altura das imagem*/
+}
