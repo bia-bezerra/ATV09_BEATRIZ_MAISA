@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maitriz</title>
+    <link rel="icon" type="image/png" href="{% static 'portal/img/favicon.png' %}">
+    <link rel="stylesheet" href="{% static 'portal/css/style.css' %}">
+</head>
+<body>
+    <header>MAITRIZ</header>
+    <section>
+        <nav>
+            <b>
+                <a href="{% url 'home' %}">PÁGINA INICIAL</a>
+                {% for item in menu %}
+                    <hr>
+                    <a href="{{ item.get_url }}"
+                       {% if item.tipo_destino == 'externo' %}target="_blank"{% endif %}>
+                        {{ item.titulo|upper }}
+                    </a>
+                {% endfor %}
+            </b>
+        </nav>
+        <main>
+            {% block conteudo %}{% endblock %}
+        </main>
+    </section>
+    <footer>
+        <p class="paragrafo rod"><i>Beatriz e Maísa</i></p>
+    </footer>
+</body>
+</html>
