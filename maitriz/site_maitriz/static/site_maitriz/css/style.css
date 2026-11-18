@@ -165,3 +165,8 @@ a:hover {                       /*Configura o link ao passar o mouse sobre ele*/
     margin: auto;                 /*Centraliza as imagens*/
 }
 
+.conteudo {
+    display: block;
+    border-bottom: none;
+    overflow: visible;
+}
