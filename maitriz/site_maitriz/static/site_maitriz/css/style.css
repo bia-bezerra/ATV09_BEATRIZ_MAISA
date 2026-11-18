@@ -17,10 +17,10 @@ header {                                      /*Configura o cabeçalho*/
     padding: 30px;                            /*Adiciona espaçamento ao redor do conteúdo no interior do cabeçalho (para o texto ficar no centro da célula)*/
 }
 
-section {                               /*Configura o meio da tabela (menu e conteúdo principal) (id)*/
-    display: flex;                      /*Cria um sistema de layout em grade que alinha os elementos lado a lado*/  
-    border-bottom: 1px solid black;   /*Coloca uma borda na cor preta de 1px na parte inferior do da seção (que agrupa o menu (nav) e o conteúdo principal (main)*/
-    overflow: auto;                     /*Cria uma barra de rolagem automática caso o conteúdo dentro do section (nav e/ou main) ultrapasse (transborde) o tamanho definido*/
+body > section {
+    display: flex;
+    border-bottom: 1px solid black;
+    overflow: auto;
 }
 
 nav {                                         /*Configura o menu (nav)*/
@@ -46,19 +46,23 @@ footer {                                       /*Configura o rodapé (footer)*/
     padding: 15px;                             /*Adiciona espaçamento interno ao redor do conteúdo no interior do rodapé (para o texto ficar no centro da célula)*/
 }
 
-@media (max-width: 768px) {            /*Aplica as regras abaixo apenas em telas menores que 768px*/
-  section {                            /*Configura o meio (section) em telas menores*/
-    flex-direction: column;            /*Move o menu (nav) lateral para o topo, acima do conteúdo principal (main)*/
-  }
+@media (max-width: 768px) {
+    body {
+        max-width: 95%;
+    }
 
-  nav {                                /*Configura o menu (nav) em telas menores*/
-    max-width: 100%;                   /*Permite que o menu ocupe toda a largura da tela menor, ignorando o limite anterior definido*/
-  }
+    body > section {
+        flex-direction: column;
+    }
 
-  main {                               /*Cnofigura o conteúdo principal (main) em telas menores*/
-    border-left: none;                 /*Remove a borda esquerda (que separava o menu (nav) lateral do conteúdo principal (main)), impedindo que fique uma borda dupla*/ 
-    border-top: 1px solid black;     /*Coloca uma borda na cor preta de 1px no topo do conteúdo principal (main)*/
-  }
+    nav {
+        max-width: 100%;
+    }
+
+    main {
+        border-left: none;
+        border-top: 1px solid black;
+    }
 }
 
 a {                         /*Configura os links da página*/
